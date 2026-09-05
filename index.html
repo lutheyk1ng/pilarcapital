@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pilar Capital — Consultoria financeira e de gestão em Brasília</title>
+<meta name="author" content="Pilar Capital">
+<meta name="description" content="Empresa júnior de Ciências Contábeis da UnB. Gestão financeira, gestão de imagem, consultoria empresarial e educação financeira para empresas que querem crescer.">
+<meta property="og:title" content="Pilar Capital — Consultoria financeira e de gestão">
+<meta property="og:description" content="Estratégia, gestão e resultados que sustentam o futuro da sua empresa.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          background: 'var(--background)',
+          foreground: 'var(--foreground)',
+          card: { DEFAULT: 'var(--card)', foreground: 'var(--card-foreground)' },
+          popover: { DEFAULT: 'var(--popover)', foreground: 'var(--popover-foreground)' },
+          primary: { DEFAULT: 'var(--primary)', foreground: 'var(--primary-foreground)' },
+          secondary: { DEFAULT: 'var(--secondary)', foreground: 'var(--secondary-foreground)' },
+          muted: { DEFAULT: 'var(--muted)', foreground: 'var(--muted-foreground)' },
+          accent: { DEFAULT: 'var(--accent)', foreground: 'var(--accent-foreground)' },
+          destructive: { DEFAULT: 'var(--destructive)', foreground: 'var(--destructive-foreground)' },
+          border: 'var(--border)',
+          input: 'var(--input)',
+          ring: 'var(--ring)',
+          deep: { DEFAULT: 'var(--deep)', foreground: 'var(--deep-foreground)' },
+          gold: 'var(--gold)',
+          'gold-soft': 'var(--gold-soft)',
+          cream: 'var(--cream)',
+        },
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          body: ['Karla', 'system-ui', 'sans-serif'],
+        },
+        boxShadow: {
+          soft: '0 24px 60px -30px oklch(25% .045 152 / .45)',
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  :root {
+    --radius: .25rem;
+    --background: oklch(97.2% .011 91);
+    --foreground: oklch(24% .03 150);
+    --card: oklch(98.5% .008 91);
+    --card-foreground: oklch(24% .03 150);
+    --popover: oklch(98.5% .008 91);
+    --popover-foreground: oklch(24% .03 150);
+    --primary: oklch(28% .048 152);
+    --primary-foreground: oklch(97.2% .011 91);
+    --secondary: oklch(94% .017 91);
+    --secondary-foreground: oklch(28% .048 152);
+    --muted: oklch(94% .017 91);
+    --muted-foreground: oklch(50% .02 140);
+    --accent: oklch(74% .108 82);
+    --accent-foreground: oklch(22% .04 152);
+    --destructive: oklch(55% .19 27);
+    --destructive-foreground: oklch(98% .005 91);
+    --border: oklch(88% .014 91);
+    --input: oklch(88% .014 91);
+    --ring: oklch(74% .108 82);
+    --deep: oklch(25% .045 152);
+    --deep-foreground: oklch(96% .012 91);
+    --gold: oklch(74% .108 82);
+    --gold-soft: oklch(85% .075 84);
+    --cream: oklch(97.2% .011 91);
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Karla", system-ui, sans-serif;
+    --shadow-soft: 0 24px 60px -30px oklch(25% .045 152/.45);
+    --gradient-deep: linear-gradient(140deg, oklch(22% .04 152), oklch(30% .05 155));
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Karla", var(--font-body), system-ui, sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "Cormorant Garamond", var(--font-display), Georgia, serif !important;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+
+  .eyebrow {
+    font-family: "Karla", var(--font-body), system-ui, sans-serif !important;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+
+  .reveal {
+    opacity: 0;
+    animation: 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards reveal-in;
+    transform: translateY(24px);
+  }
+
+  @keyframes reveal-in {
+    to { opacity: 1; transform: none; }
+  }
+
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+
+  #mobile-nav { display: none; }
+  #mobile-nav.open { display: block; }
+</style>
+</head>
+<body class="font-body">
+<div class="min-h-screen bg-background text-foreground">
+
+<header class="fixed inset-x-0 top-0 z-50 transition-all duration-500 bg-background/90 backdrop-blur-md shadow-[0_1px_0_0_var(--border)]">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+    <a href="#inicio" aria-label="Pilar Capital — início">
+      <span class="inline-flex items-center gap-3 text-primary">
+        <svg viewBox="0 0 48 56" fill="none" class="h-7 w-auto text-primary" aria-hidden="true">
+          <rect x="2" y="10" width="44" height="4" rx="1" fill="currentColor"></rect>
+          <path d="M24 2 4 10h40L24 2Z" fill="currentColor"></path>
+          <rect x="8" y="18" width="5" height="28" fill="currentColor"></rect>
+          <rect x="17" y="18" width="5" height="28" fill="currentColor"></rect>
+          <rect x="26" y="18" width="5" height="28" fill="currentColor"></rect>
+          <rect x="35" y="18" width="5" height="28" fill="currentColor"></rect>
+          <rect x="2" y="48" width="44" height="5" rx="1" fill="currentColor"></rect>
+        </svg>
+        <span class="leading-none">
+          <span class="block font-display text-lg tracking-[0.14em]">PILAR</span>
+          <span class="block text-[0.5rem] tracking-[0.42em] opacity-70">CAPITAL</span>
+        </span>
+      </span>
+    </a>
+    <ul class="hidden items-center gap-9 md:flex">
+      <li><a href="#inicio" class="eyebrow relative py-2 transition-colors text-muted-foreground hover:text-primary">Início</a></li>
+      <li><a href="#quem-somos" class="eyebrow relative py-2 transition-colors text-muted-foreground hover:text-primary">Quem somos</a></li>
+      <li><a href="#servicos" class="eyebrow relative py-2 transition-colors text-muted-foreground hover:text-primary">Serviços</a></li>
+      <li><a href="#diferenciais" class="eyebrow relative py-2 transition-colors text-muted-foreground hover:text-primary">Diferenciais</a></li>
+      <li><a href="#contato" class="eyebrow relative py-2 transition-colors text-primary">Contato</a></li>
+    </ul>
+    <button type="button" id="mobile-nav-toggle" class="text-primary md:hidden" aria-label="Abrir menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-6" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+    </button>
+  </nav>
+  <div id="mobile-nav" class="md:hidden border-t border-border bg-background px-6 py-4">
+    <ul class="flex flex-col gap-4">
+      <li><a href="#inicio" class="eyebrow text-muted-foreground hover:text-primary">Início</a></li>
+      <li><a href="#quem-somos" class="eyebrow text-muted-foreground hover:text-primary">Quem somos</a></li>
+      <li><a href="#servicos" class="eyebrow text-muted-foreground hover:text-primary">Serviços</a></li>
+      <li><a href="#diferenciais" class="eyebrow text-muted-foreground hover:text-primary">Diferenciais</a></li>
+      <li><a href="#contato" class="eyebrow text-primary">Contato</a></li>
+    </ul>
+  </div>
+</header>
+
+<section id="inicio" class="relative overflow-hidden pt-28">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-16 lg:grid-cols-[1fr_1.05fr] lg:px-10 lg:pb-24 lg:pt-16">
+    <div class="reveal max-w-xl">
+      <p class="eyebrow text-gold">Empresa júnior · Escola de Guaratinguetá</p>
+      <h1 class="mt-6 font-display text-5xl leading-[1.05] text-primary md:text-6xl lg:text-7xl">Estratégia, gestão e resultados que sustentam o futuro da sua empresa.
+      </h1>
+      <p class="mt-7 max-w-md text-base leading-relaxed text-muted-foreground">Consultoria financeira e de gestão para empresas que desejam crescer com segurança e eficiência.</p>
+      <div class="mt-10 flex flex-wrap items-center gap-6">
+        <a href="#servicos" class="eyebrow group inline-flex items-center gap-3 bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-deep">
+          Nossos serviços
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+        <a href="#contato" class="eyebrow border-b border-gold pb-1 text-primary">Fale conosco</a>
+      </div>
+    </div>
+    <div class="reveal relative" style="animation-delay:150ms">
+      <div class="absolute -left-6 -top-6 hidden h-40 w-40 border border-gold/40 lg:block"></div>
+      <img src="https://pilarcapital.lovable.app/assets/hero-CKlFhV09.jpg" alt="Mesa de trabalho com laptop exibindo indicadores financeiros" width="1408" height="1008" class="relative w-full object-cover shadow-soft">
+    </div>
+  </div>
+  <div class="bg-deep text-deep-foreground">
+    <div class="mx-auto grid max-w-7xl gap-8 px-6 py-8 sm:grid-cols-3 lg:px-10">
+      <div class="flex items-center gap-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-gold" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
+        <span class="text-sm tracking-wide">Decisões mais inteligentes</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-gold" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        <span class="text-sm tracking-wide">Gestão eficiente</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="size-6 text-gold" aria-hidden="true"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"></path><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path></svg>
+        <span class="text-sm tracking-wide">Resultados sustentáveis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quem-somos" class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+  <div class="grid items-center gap-14 lg:grid-cols-2">
+    <div>
+      <p class="eyebrow text-gold">Quem somos</p>
+      <h2 class="mt-5 font-display text-4xl text-primary md:text-5xl">Conhecimento acadêmico a serviço de resultados reais.</h2>
+      <p class="mt-7 max-w-lg leading-relaxed text-muted-foreground">A Pilar Capital é uma empresa júnior de consultoria financeira e de gestão, composta por estudantes de Ciências Contábeis da Universidade de Brasília.</p>
+      <p class="mt-5 max-w-lg leading-relaxed text-muted-foreground">Nosso propósito é transformar conhecimento em valor, oferecendo soluções estratégicas que impulsionam o crescimento e a sustentabilidade das empresas.</p>
+      <dl class="mt-10 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-8">
+        <div><dt class="font-display text-4xl text-primary">+80</dt><dd class="mt-1 text-xs leading-snug text-muted-foreground">Projetos entregues</dd></div>
+        <div><dt class="font-display text-4xl text-primary">+40</dt><dd class="mt-1 text-xs leading-snug text-muted-foreground">Consultores formados</dd></div>
+        <div><dt class="font-display text-4xl text-primary">98%</dt><dd class="mt-1 text-xs leading-snug text-muted-foreground">Satisfação</dd></div>
+      </dl>
+    </div>
+    <div class="relative">
+      <img src="https://pilarcapital.lovable.app/assets/team-D-7-ovbg.jpg" alt="Equipe de consultores da Pilar Capital reunida analisando relatórios" width="1200" height="1008" loading="lazy" class="w-full object-cover shadow-soft">
+      <div class="absolute -bottom-6 -right-6 hidden h-40 w-40 border border-gold/40 lg:block"></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="bg-secondary/60 py-24 lg:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="max-w-2xl">
+      <p class="eyebrow text-gold">Nossos serviços</p>
+      <h2 class="mt-5 font-display text-4xl text-primary md:text-5xl">Soluções completas para todas as etapas de crescimento.</h2>
+    </div>
+    <div class="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+      <a href="#gestao-financeira" class="group bg-background p-8 transition-colors hover:bg-deep">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="size-8 text-gold transition-transform group-hover:-translate-y-1" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
+        <h3 class="mt-6 font-display text-2xl text-primary group-hover:text-cream">Gestão Financeira</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted-foreground group-hover:text-cream/70">Análise, planejamento e controle financeiro para melhores resultados.</p>
+      </a>
+      <a href="#gestao-de-imagem" class="group bg-background p-8 transition-colors hover:bg-deep">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="size-8 text-gold transition-transform group-hover:-translate-y-1" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+        <h3 class="mt-6 font-display text-2xl text-primary group-hover:text-cream">Gestão de Imagem</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted-foreground group-hover:text-cream/70">Fortalecimento da marca e posicionamento estratégico.</p>
+      </a>
+      <a href="#consultoria-empresarial" class="group bg-background p-8 transition-colors hover:bg-deep">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="size-8 text-gold transition-transform group-hover:-translate-y-1" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="m9 14 2 2 4-4"></path></svg>
+        <h3 class="mt-6 font-display text-2xl text-primary group-hover:text-cream">Consultoria Empresarial</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted-foreground group-hover:text-cream/70">Diagnóstico e soluções personalizadas para sua empresa.</p>
+      </a>
+      <a href="#educacao-financeira" class="group bg-background p-8 transition-colors hover:bg-deep">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="size-8 text-gold transition-transform group-hover:-translate-y-1" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+        <h3 class="mt-6 font-display text-2xl text-primary group-hover:text-cream">Educação Financeira</h3>
+        <p class="mt-3 text-sm leading-relaxed text-muted-foreground group-hover:text-cream/70">Treinamentos e capacitações para equipes e líderes.</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="mt-24 space-y-px bg-border">
+    <div id="gestao-financeira" class="grid scroll-mt-24 bg-deep text-deep-foreground lg:grid-cols-2">
+      <div class="px-6 py-16 lg:px-16 lg:py-24">
+        <div class="mx-auto max-w-lg">
+          <h3 class="font-display text-4xl md:text-5xl">Gestão Financeira</h3>
+          <p class="mt-6 leading-relaxed text-cream/70">Apoiamos sua empresa na organização e otimização dos recursos financeiros, promovendo decisões mais assertivas e sustentáveis.</p>
+          <ul class="mt-8 space-y-3">
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Planejamento Financeiro</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Fluxo de Caixa</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Análise de Indicadores</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Redução de Custos</li>
+          </ul>
+          <a href="#contato" class="eyebrow mt-10 inline-flex items-center gap-3 bg-gold px-8 py-4 text-accent-foreground transition-colors hover:bg-gold-soft">
+            Solicitar proposta
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+      <img src="https://pilarcapital.lovable.app/assets/service-financeira-B96ZrRuO.jpg" alt="Gestão Financeira" width="1200" height="900" loading="lazy" class="h-full min-h-72 w-full object-cover">
+    </div>
+
+    <div id="gestao-de-imagem" class="grid scroll-mt-24 bg-deep text-deep-foreground lg:grid-cols-2">
+      <div class="px-6 py-16 lg:px-16 lg:py-24 lg:order-2">
+        <div class="mx-auto max-w-lg">
+          <h3 class="font-display text-4xl md:text-5xl">Gestão de Imagem</h3>
+          <p class="mt-6 leading-relaxed text-cream/70">Construímos e fortalecemos a imagem da sua empresa para gerar valor, confiança e conexão com o seu público.</p>
+          <ul class="mt-8 space-y-3">
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Identidade Visual</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Posicionamento de Marca</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Comunicação Estratégica</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Presença Digital</li>
+          </ul>
+          <a href="#contato" class="eyebrow mt-10 inline-flex items-center gap-3 bg-gold px-8 py-4 text-accent-foreground transition-colors hover:bg-gold-soft">
+            Solicitar proposta
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+      <img src="https://pilarcapital.lovable.app/assets/service-imagem-Ddn1uUxS.jpg" alt="Gestão de Imagem" width="1200" height="900" loading="lazy" class="h-full min-h-72 w-full object-cover lg:order-1">
+    </div>
+
+    <div id="consultoria-empresarial" class="grid scroll-mt-24 bg-deep text-deep-foreground lg:grid-cols-2">
+      <div class="px-6 py-16 lg:px-16 lg:py-24">
+        <div class="mx-auto max-w-lg">
+          <h3 class="font-display text-4xl md:text-5xl">Consultoria Empresarial</h3>
+          <p class="mt-6 leading-relaxed text-cream/70">Analisamos os processos e indicadores da sua empresa para propor soluções personalizadas e eficazes.</p>
+          <ul class="mt-8 space-y-3">
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Diagnóstico Empresarial</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Planejamento Estratégico</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Modelagem de Processos</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Acompanhamento de Resultados</li>
+          </ul>
+          <a href="#contato" class="eyebrow mt-10 inline-flex items-center gap-3 bg-gold px-8 py-4 text-accent-foreground transition-colors hover:bg-gold-soft">
+            Solicitar proposta
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+      <img src="https://pilarcapital.lovable.app/assets/service-consultoria-Bsh3m0Tn.jpg" alt="Consultoria Empresarial" width="1200" height="900" loading="lazy" class="h-full min-h-72 w-full object-cover">
+    </div>
+
+    <div id="educacao-financeira" class="grid scroll-mt-24 bg-deep text-deep-foreground lg:grid-cols-2">
+      <div class="px-6 py-16 lg:px-16 lg:py-24 lg:order-2">
+        <div class="mx-auto max-w-lg">
+          <h3 class="font-display text-4xl md:text-5xl">Educação Financeira</h3>
+          <p class="mt-6 leading-relaxed text-cream/70">Capacitamos pessoas e equipes para tomarem decisões financeiras melhores no dia a dia da empresa.</p>
+          <ul class="mt-8 space-y-3">
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Treinamentos Personalizados</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Workshops e Palestras</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Planejamento Pessoal e Empresarial</li>
+            <li class="flex items-center gap-3 text-sm text-cream/90"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Cultura Financeira</li>
+          </ul>
+          <a href="#contato" class="eyebrow mt-10 inline-flex items-center gap-3 bg-gold px-8 py-4 text-accent-foreground transition-colors hover:bg-gold-soft">
+            Solicitar proposta
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+      </div>
+      <img src="https://pilarcapital.lovable.app/assets/service-educacao-CVuo46MV.jpg" alt="Educação Financeira" width="1200" height="900" loading="lazy" class="h-full min-h-72 w-full object-cover lg:order-1">
+    </div>
+  </div>
+</section>
+
+<section id="diferenciais" class="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+  <div class="max-w-2xl">
+    <p class="eyebrow text-gold">Nossos diferenciais</p>
+    <h2 class="mt-5 font-display text-4xl text-primary md:text-5xl">O que nos torna o parceiro ideal para o seu negócio.</h2>
+  </div>
+  <div class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="border-t border-gold/50 pt-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="size-7 text-gold" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+      <h3 class="mt-5 font-display text-2xl text-primary">Olhar estratégico e júnior</h3>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">União de conhecimento acadêmico e visão prática de mercado.</p>
+    </div>
+    <div class="border-t border-gold/50 pt-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="size-7 text-gold" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+      <h3 class="mt-5 font-display text-2xl text-primary">Soluções personalizadas</h3>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Cada empresa é única, por isso nossas soluções também são.</p>
+    </div>
+    <div class="border-t border-gold/50 pt-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="size-7 text-gold" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+      <h3 class="mt-5 font-display text-2xl text-primary">Compromisso com resultados</h3>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Trabalhamos juntos para gerar impacto real e mensurável.</p>
+    </div>
+    <div class="border-t border-gold/50 pt-6">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" class="size-7 text-gold" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
+      <h3 class="mt-5 font-display text-2xl text-primary">Inovação e atualização</h3>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Aplicamos técnicas modernas e estamos sempre em evolução.</p>
+    </div>
+  </div>
+
+  <div class="mt-24 grid items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
+    <div>
+      <h2 class="font-display text-4xl text-primary md:text-5xl">Por que escolher a Pilar Capital?</h2>
+      <p class="mt-6 max-w-lg leading-relaxed text-muted-foreground">Porque acreditamos que uma boa gestão é o pilar que sustenta grandes conquistas.</p>
+      <ul class="mt-8 max-w-lg space-y-4">
+        <li class="flex items-center gap-3 border-b border-border pb-4 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Atendimento próximo e consultivo</li>
+        <li class="flex items-center gap-3 border-b border-border pb-4 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Metodologia ágil e eficiente</li>
+        <li class="flex items-center gap-3 border-b border-border pb-4 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Preço justo e acessível</li>
+        <li class="flex items-center gap-3 border-b border-border pb-4 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-gold" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Impacto positivo na sociedade</li>
+      </ul>
+    </div>
+    <img src="https://pilarcapital.lovable.app/assets/pillars-CUaU8Alr.jpg" alt="Colunas clássicas de pedra iluminadas pelo sol" width="1008" height="1200" loading="lazy" class="h-[28rem] w-full object-cover shadow-soft">
+  </div>
+</section>
+
+<section id="contato" class="bg-secondary/60 py-24 lg:py-32">
+  <div class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:px-10">
+    <div>
+      <p class="eyebrow text-gold">Contato</p>
+      <h2 class="mt-5 font-display text-4xl text-primary md:text-5xl">Vamos conversar?</h2>
+      <p class="mt-6 max-w-md leading-relaxed text-muted-foreground">Estamos prontos para entender os desafios da sua empresa e construir soluções juntos.</p>
+      <ul class="mt-10 space-y-5 text-sm">
+        <li class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-gold" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg><a href="tel:+5561999999999" class="hover:text-primary">(61) 99999-9999</a></li>
+        <li class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-gold" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg><a href="mailto:contato@pilarcapital.com.br" class="hover:text-primary">contato@pilarcapital.com.br</a></li>
+        <li class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-gold" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>Conselheiro Rodrigues Alves - Guaratinguetá, SP</li>
+        <li class="flex items-center gap-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 text-gold" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg><a href="https://instagram.com/pilarcapital" target="_blank" rel="noreferrer" class="hover:text-primary">@pilarcapital</a></li>
+      </ul>
+    </div>
+    <div class="bg-background p-8 shadow-soft lg:p-12">
+      <h3 class="font-display text-3xl text-primary">Envie sua mensagem</h3>
+      <div class="mt-8">
+        <form id="contactForm" class="space-y-6">
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div><input name="nome" required class="w-full border-b border-border bg-transparent px-1 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-gold" placeholder="Nome"></div>
+            <div><input name="email" type="email" required class="w-full border-b border-border bg-transparent px-1 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-gold" placeholder="E-mail"></div>
+          </div>
+          <input name="assunto" class="w-full border-b border-border bg-transparent px-1 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-gold" placeholder="Assunto">
+          <div><textarea name="mensagem" required class="w-full border-b border-border bg-transparent px-1 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-gold min-h-32 resize-none" placeholder="Mensagem"></textarea></div>
+          <button type="submit" class="eyebrow group inline-flex items-center gap-3 bg-primary px-8 py-4 text-primary-foreground transition-colors hover:bg-deep">
+            Enviar mensagem
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
+          </button>
+          <p id="formNote" hidden class="text-sm text-primary">Mensagem enviada! Em breve entraremos em contato.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-deep text-deep-foreground">
+  <div class="mx-auto max-w-7xl px-6 py-20 text-center lg:px-10 lg:py-24">
+    <div class="flex justify-center">
+      <span class="inline-flex items-center gap-3 text-cream">
+        <svg viewBox="0 0 48 56" fill="none" class="h-20 w-auto text-cream" aria-hidden="true">
+          <rect x="2" y="10" width="44" height="4" rx="1" fill="currentColor"></rect>
+          <path d="M24 2 4 10h40L24 2Z" fill="currentColor"></path>
+          <rect x="8" y="18" width="5" height="28" fill="currentColor"></rect>
+          <rect x="17" y="18" width="5" height="28" fill="currentColor"></rect>
+          <rect x="26" y="18" width="5" height="28" fill="currentColor"></rect>
+          <rect x="35" y="18" width="5" height="28" fill="currentColor"></rect>
+          <rect x="2" y="48" width="44" height="5" rx="1" fill="currentColor"></rect>
+        </svg>
+        <span class="leading-none">
+          <span class="block font-display text-6xl md:text-7xl tracking-[0.14em]">PILAR</span>
+          <span class="block text-sm tracking-[0.42em] opacity-70">CAPITAL</span>
+        </span>
+      </span>
+    </div>
+    <p class="mx-auto mt-8 max-w-xl text-cream/70">Estratégia, gestão e resultados que sustentam o futuro da sua empresa.
+      <br>
+      <br>
+      Rayane Aparecida 
+    </br>
+
+      <br>
+      Luiz Miguel
+      </br> 
+      <br>
+      Maria Eduarda 
+      </br> 
+      <br>
+      João Henrique 
+      </br> 
+      <br>
+      Laura Nicoly
+      </br> 
+    </p>
+    <a href="#contato" class="eyebrow mt-10 inline-flex items-center gap-3 bg-gold px-8 py-4 text-accent-foreground transition-colors hover:bg-gold-soft">
+      Vamos construir juntos
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-3.5" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+    </a>
+    <div class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-cream/15 pt-8 text-xs text-cream/60 sm:flex-row">
+      <span>© 2026 Pilar Capital · Empresa Júnior — UnB</span>
+      <span>Guaratinguetá, SP · contato@pilarcapital.com.br</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  const toggle = document.getElementById('mobile-nav-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  toggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileNav.classList.remove('open'));
+  });
+
+  const form = document.getElementById('contactForm');
+  const note = document.getElementById('formNote');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    note.hidden = false;
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
